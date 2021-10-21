@@ -1,0 +1,25 @@
+{
+  "name": "tracking-webstack",
+  "version": "1.0.0",
+  "description": "Webstack for tracking embedded system",
+  "main": "index.js",
+  "scripts": {
+    "test": "xo"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Luhtaje/Tracking-WebStack.git"
+  },
+  "author": "Jere Luhtanen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Luhtaje/Tracking-WebStack/issues"
+  },
+  "homepage": "https://github.com/Luhtaje/Tracking-WebStack#readme",
+  "devDependencies": {
+    "prettier": "2.4.1",
+    "xo": "^0.45.0"
+  },
+  "dependencies": {
+  }
+}

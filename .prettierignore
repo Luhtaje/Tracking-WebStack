@@ -1,0 +1,9 @@
+/tests/**.json
+
+node_modules
+dist
+
+/coverage
+/docs
+
+package.json
