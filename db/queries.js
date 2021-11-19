@@ -11,3 +11,9 @@ module.exports.getGroups = () => {
         console.log(data);
     });
 }
+
+module.exports.getPersons = () => {
+    db.all(`SELECT * FROM persons ORDER BY personid`,[],function(err,data){
+        console.log(data);
+    });
+}

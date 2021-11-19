@@ -4,7 +4,10 @@
   "description": "Webstack for tracking embedded system",
   "main": "index.js",
   "scripts": {
-    "test": "xo"
+    "test": "xo",
+    "start": "nodemon server.js",
+    "server": "node server.js",
+    "dbcreate": "node db/dbsetup.js"
   },
   "repository": {
     "type": "git",
