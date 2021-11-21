@@ -8,16 +8,15 @@ const t = 2;  // modify to change the sending interval
 
 let pid = 1;
 let gid = 21;
-let timeNow = Date.now;
-let lat = 0.01
-let lon = 0.02
-
+let timeNow = new Date().toString();
+let lat = 0.01;
+let lon = 0.02;
 
 const client = mqtt.connect(addr);
 
 
 setInterval(() => {
-	const obj = {
+	let obj = {
 		personid: pid,
 		groupid: gid,
 		date: timeNow,
@@ -26,8 +25,8 @@ setInterval(() => {
 			longitude: lon
 		}
 	}
-	tmp += Math.floor(Math.random() * 3 - 1);
+	timeNow = Date();
+	console.log(timeNow);
+	console.log('published.');
 	client.publish('sim/testdata', JSON.stringify(obj)); // See that topic is correct
-	count += 1;
-	ts += t;
 }, t * 1000);
