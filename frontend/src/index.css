@@ -1,0 +1,44 @@
+html,body,#root{
+    height: 100%;
+}
+h1{
+    font-family: 'Permanent Marker', cursive;
+    font-size: 10ch;
+}
+.appcont{
+    background-color: #b06b37;
+    height: 100%;
+}
+
+.headcont{
+    display: flex;
+}
+
+.headtitle{
+    flex-grow: 2;
+    text-align: center;
+}
+.headside{
+    flex-grow: 1;
+}
+
+.navcont{
+display: flex;
+justify-content: space-evenly;
+}
+
+
+.bodycont{
+    display:flex;
+    align-items: stretch;
+    height: 80%;
+    
+}
+
+.bodymain{
+  flex-grow: 3;
+}
+
+.bodyside{
+  flex-grow: 1;
+}

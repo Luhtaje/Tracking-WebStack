@@ -8,7 +8,7 @@ class App extends React.Component {
 
     render(){
      return(
-        <div classname="header">
+        <div className="appcont">
             <Header/>
             <Navigator/>
             <Body/>
