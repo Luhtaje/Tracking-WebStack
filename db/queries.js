@@ -1,19 +1,22 @@
-import db from './index.js';
+//import db from './index.js';
 const sqlite = require('sqlite3').verbose();
+const db = new sqlite.Database('./local.db');
 
-//Does this populate db?
-module.exports.putPerson = () => {
-    db.run(`INSERT INTO persons`)
+
+module.exports.insertOne = (dataObj) => {
+    db.run(`INSERT INTO dogs VALUES (NULL, "${dataObj.dogId}","${dataObj.lat}","${dataObj.lon}")`,[], (err)=>{
+        if(err) console.log(err);
+    })
 }
 
-module.exports.getGroups = () => {
-    db.all(`SELECT * FROM groups ORDER BY groupid`,[],function(err,data){
-        console.log(data);
-    });
-}
-
-module.exports.getPersons = () => {
-    db.all(`SELECT * FROM persons ORDER BY personid`,[],function(err,data){
-        console.log(data);
-    });
+module.exports.getDog = (dog) => {
+    return new Promise((resolve,reject) =>{
+        db.all(`SELECT * FROM dogs`,[],(err,response)=>{
+            if(err){
+                console.log(err);
+                reject();
+            }
+            resolve (response);
+        })
+    })
 }
