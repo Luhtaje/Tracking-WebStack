@@ -21,7 +21,7 @@ client.on('connect' ,()=>{
 
 client.on('message', (topic,message) =>{
     const data = JSON.parse(message);
-    console.log(topic);
+    queries.insertOne(data);
     console.log(data);
 })
 
@@ -29,20 +29,17 @@ client.on('message', (topic,message) =>{
 /*******************************************************************
  * Database testing ground
  ******************************************************************/
- testData= {
-    dogId:1,
-    lat:2.123123,
-    lon:4.231414
-}
 
-queries.insertOne(testData);
-
-async function getDog(){
+/*async function getDog(){
     const response = await queries.getDog(1);
     console.log(response);
    
 }
+
 getDog();
+*/
+
+queries.fetchDogs(1);
 
 
 module.exports = app;

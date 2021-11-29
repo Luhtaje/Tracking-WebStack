@@ -7,24 +7,35 @@ const t = 2;  // modify to change the sending interval
 const client = mqtt.connect(addr);
 
 
-let pid = 1;
-let gid = 21;
-let timeNow = new Date().toString();
-let lat = 0.01;
-let lon = 0.02;
+setInterval(() => {
+	let obj = {
+		dog:1,
+		lat:2.15152,
+		lon:2.11322,
+	}
+
+	client.publish('sim/testdata', JSON.stringify(obj)); // See that topic is correct
+
+}, t * 1100);
 
 setInterval(() => {
 	let obj = {
-		personid: pid,
-		groupid: gid,
-		date: timeNow,
-		coordinates: {
-			latitude: lat,
-			longitude: lon
-		}
+		dog:2,
+		lat:2.4255,
+		lon:2.8653,
 	}
 
-	timeNow = Date();
 	client.publish('sim/testdata', JSON.stringify(obj)); // See that topic is correct
 
-}, t * 1000);
+}, t * 1299);
+
+setInterval(() => {
+	let obj = {
+		dog:3,
+		lat:1.24155,
+		lon:3.12122,
+	}
+
+	client.publish('sim/testdata', JSON.stringify(obj)); // See that topic is correct
+
+}, t * 1450);
