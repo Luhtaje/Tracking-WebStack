@@ -1,7 +1,8 @@
 import React from 'react';
 import Header from './components/header';
 import Navigator from './components/navigator';
-import Body from './components/body';
+import Bodysidebar from './components/bodysidebar';
+import {Outlet} from 'react-router';
 import './index.css';
 
 class App extends React.Component {
@@ -11,7 +12,15 @@ class App extends React.Component {
         <div className="appcont">
             <Header/>
             <Navigator/>
-            <Body/>
+            
+            <div className='bodycont'>
+                <Bodysidebar/>
+                    <div className='bodymain'>
+                        <Outlet/>
+                    </div>
+                <Bodysidebar/>
+            </div>
+            
         </div>
      )
     }
