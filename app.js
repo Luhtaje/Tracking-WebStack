@@ -1,17 +1,31 @@
 const express = require ("express");
 const app = express();
 const bodyParser = require('body-parser');
-const routes = require('./api/routes');
 const mqtt = require('mqtt');
 const queries = require('./db/queries');
+const dbroutes = require('./api/routes/dbroutes');
+const routes = require('./api/routes/index');
+const cors = require('cors');
 
 //Middleware
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
+app.use(cors());
+app.options('*',cors());
 
+
+//Routing and HTTP headers
 app.use('/', routes);
+app.use('/dogs',dbroutes);
 
+app.use((req,res,next) =>{
+    res.setHeader('Access-Control-Allow-Origin','*');
+    res.setHeader('Access-Control-Allow-Methods','GET, POST, OPTIONS, PUT, PATCH, DELETE');
+    res.setHeader("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
+});
 
+//MQTT connection and subscribing
 var client = mqtt.connect('mqtt://127.0.0.1:1883');
 
 
@@ -35,11 +49,16 @@ client.on('message', (topic,message) =>{
     console.log(response);
    
 }
-
+queries.fetchDogs(1);
 getDog();
 */
+let dog={
+    dog:1,
+    lat:62.510118,
+    lon:28.904133
+}
 
-queries.fetchDogs(1);
+queries.insertOne(dog);
 
 
 module.exports = app;

@@ -9,15 +9,22 @@ module.exports.insertOne = (dataObj) => {
     })
 }
 
-module.exports.fetchDogs = async(dog) => {
-    const response = await getDog(dog);
-    console.log(response);
-   return response;
+
+module.exports.getDogs = () => {
+    return new Promise((resolve,reject) =>{
+        db.all(`SELECT * FROM dogs`,[],(err,response)=>{
+            if(err){
+                console.log(err);
+                reject();
+            }
+            resolve (response);
+        })
+    })
 }
 
-function getDog(dog) {
-    return new Promise((resolve,reject) =>{
-        db.all(`SELECT * FROM dogs where dog ="${dog}"`,[],(err,response)=>{
+module.exports.getOne = (dog) => {
+    return new Promise ((resolve,reject) =>{
+        db.all(`SELECT * FROM DOGS WHERE dog = "${dog}"`,[], (err,response)=>{
             if(err){
                 console.log(err);
                 reject();
