@@ -4,9 +4,9 @@ The goal of the project was to test a LoRaWan-gateway as a tool to gather locati
 
 The point in general of an innovation project is not to complete the product per say, but more to prove a concept and learn about project management, research, teamwork and documenting. Therefore the user interface is still missing features that would be essential for a working product, such as:
 
-User authentication
-Group system
-Saving map to local storage of the device
+-User authentication
+-Group system
+-Saving map to local storage of the device
 
 
 
@@ -22,9 +22,11 @@ Saving map to local storage of the device
 
 ##### Functionality and structure
 
-- server.js starts the whole application. In app.js we initialize middleware and set HTTP headers. 
+- server.js 
+starts the whole application. In app.js we initialize middleware and set HTTP headers. 
 
-- frontend/ contains all files used to develop the frontend.
+- frontend/ 
+contains all files used to develop the frontend.
 
 - api/routes
 HTTP routes for fetching data from the backend.
