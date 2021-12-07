@@ -28,7 +28,7 @@ app.use((req,res,next) =>{
 //MQTT connection and subscribing
 var client = mqtt.connect('mqtt://127.0.0.1:1883');
 
-
+//MQTT eventhandlers
 client.on('connect' ,()=>{
     client.subscribe('sim/testdata');
 })
@@ -38,27 +38,6 @@ client.on('message', (topic,message) =>{
     queries.insertOne(data);
     console.log(data);
 })
-
-
-/*******************************************************************
- * Database testing ground
- ******************************************************************/
-
-/*async function getDog(){
-    const response = await queries.getDog(1);
-    console.log(response);
-   
-}
-queries.fetchDogs(1);
-getDog();
-*/
-let dog={
-    dog:1,
-    lat:62.510118,
-    lon:28.904133
-}
-
-queries.insertOne(dog);
 
 
 module.exports = app;

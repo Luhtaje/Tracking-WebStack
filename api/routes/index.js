@@ -1,3 +1,4 @@
+//HTTP routes that dont access the database.
 const express = require('express');
 const router = express.Router();
 

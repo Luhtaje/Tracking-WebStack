@@ -5,6 +5,7 @@ const limeOptions = {
     color:'lime'
 }
 
+//Renders a leaflet map with a polyfill line based on dog coordinates from the database.
 class Tracking extends React.Component{
     constructor(props){
         super(props);

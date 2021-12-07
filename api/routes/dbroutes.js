@@ -1,3 +1,4 @@
+//HTTP routes that access the database
 const express = require('express');
 const queries = require('./../../db/queries.js');
 const router = express.Router();

@@ -1,3 +1,4 @@
+//Simulator to send MQTT messages to the broker, which the backend will then receive.
 'use strict';
 
 const mqtt = require('mqtt');
