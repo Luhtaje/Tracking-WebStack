@@ -1,6 +1,6 @@
 # About
 This project is a "web-stack" portion or user interface of an innovation project for Metropolia of applied sciences.
-The goal of the project was to test a LoRaWan-gateway as a tool to gather location data in low connection areas and send that data to the interface over cellular network for users to see. Product of the product would be used by groups of hunter hunting moose, to add reliability of receiving location data of the hunting dogs in low connection areas. This project contains a Node.js backend, React frontend and a local SQLite database for the user interface. 
+The goal of the project was to test a LoRaWan-gateway as a tool to gather location data in low connection areas and send that data to the interface over cellular network for users to see. Product of the project would be used by groups of hunters hunting moose, to add reliability of receiving location data of the hunting dogs. This project contains a Node.js backend, React frontend and a local SQLite database for the user interface. 
 
 The point in general of an innovation project is not to complete the product per say, but more to prove a concept and learn about project management, research, teamwork and documenting. Therefore the user interface is still missing features that would be essential for a working product, such as:
 
